@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (now_year == -1 || now_month == -1) {
             now_year = Calendar.getInstance().get(Calendar.YEAR);
-            now_month = Calendar.getInstance().get(Calendar.MONTH);
+            now_month = Calendar.getInstance().get(Calendar.MONTH)+1;
             day = Calendar.getInstance().get(Calendar.DATE);
         }
 
