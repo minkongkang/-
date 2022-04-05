@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 convertView = inflater.inflate(R.layout.gridview_item, parent, false);
                 holder = new ViewHolder();
 
-                holder.tvItemGridView = (TextView)convertView.findViewById(R.id.gridview_item);
+                holder.tvItemGridView = (TextView)convertView.findViewById(R.id.tv_item_gridview);
 
                 convertView.setTag(holder);
             } else {
