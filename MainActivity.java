@@ -1,4 +1,4 @@
-package com.example.androidproject1;
+package com.example.mina2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (now_year == -1 || now_month == -1) {
             now_year = Calendar.getInstance().get(Calendar.YEAR);
-            now_month = Calendar.getInstance().get(Calendar.MONTH)+1;
+            now_month = Calendar.getInstance().get(Calendar.MONTH);
             day = Calendar.getInstance().get(Calendar.DATE);
         }
 
@@ -63,14 +63,14 @@ public class MainActivity extends AppCompatActivity {
         dayList = new ArrayList<String>();
 
 //이번달 1일 무슨요일인지 판단 Cal.set(Year,Month,Day)
-        Cal.set(now_year, now_month, 1); //이번달 1일 set
+        Cal.set(now_year, now_month-1, 1); //이번달 1일 set
         int startday = Cal.get(Calendar.DAY_OF_WEEK); //1일의 요일
 // 1일 전 요일들에 공백채우기
         for (int i = 1; i < startday; i++) {
             dayList.add("");
         }
 //현재 월에 끝일 구하기
-        setCalDate(Cal.get(Calendar.MONTH) + 1);
+        setCalDate(Cal.get(Calendar.MONTH)+1);
 
 //어댑터 연결
         gridAdapter = new GridAdapter(getApplicationContext(), dayList);
@@ -120,10 +120,10 @@ public class MainActivity extends AppCompatActivity {
 
     // 해당 월에 표시할 일 수
     private void setCalDate(int now_month){
-        Cal.set(Calendar.MONTH, now_month - 1);
+        Cal.set(Calendar.MONTH, now_month +1);
 
         for (int i = 0; i < Cal.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
-            dayList.add("" + (i + 1));
+            dayList.add("" + (i+1));
         }
     }
 
