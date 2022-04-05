@@ -1,6 +1,7 @@
 package com.example.mina2;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(MainActivity.this,
-                        now_year+"/"+now_month+"/"+day,Toast.LENGTH_LONG).show();
+                        now_year+"/"+now_month+"/"+dayList.get(i),Toast.LENGTH_SHORT).show();
             }
         });
 
